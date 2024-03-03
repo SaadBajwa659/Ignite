@@ -41,6 +41,7 @@ export const upcomingGamesURL = () => `${base_url}${upcoming_games}`;
 export const newGamesURL = () => `${base_url}${newgames}`
 
 // GAME DETAILS
-export const gameDetailsURL = (game_id) => `${base_url}games/${game_id}`
+export const gameDetailsURL = (game_id) => `${base_url}games/${game_id}?key=${apiKey}`
 // Game ScreenShots
-export const gameScreenshotURL = (game_id) => `${base_url}games/${game_id}/screenshots`
+export const gameScreenshotURL = (game_id) => `${base_url}games/${game_id}/screenshots?key=${apiKey}`;
+

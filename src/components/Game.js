@@ -8,21 +8,23 @@ import { loadDetail } from '../actions/detailAction';
 import { Link } from "react-router-dom";
 
 const Game = ({ name, released, image, id }) => {
-    // Load Details
     const dispatch = useDispatch();
+    
     const loadDetailHandler = () => {
-        dispatch(loadDetail(id))
+        dispatch(loadDetail(id));
     }
+
     return (
-        <StyledGame onClick={loadDetailHandler}>
-            <Link to={`/game/${id}`}>
+        <StyledGame>
+            <Link to={`/game/${id}`} onClick={loadDetailHandler}>
                 <h3>{name}</h3>
                 <p>{released}</p>
                 <img src={image} alt={name} />
             </Link>
         </StyledGame>
-    )
-}
+    );
+};
+
 
 const StyledGame = styled(motion.div)`
     min-height: 30vh;
