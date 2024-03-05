@@ -34,14 +34,16 @@ const popular_games = `games?key=${apiKey}&dates=${lastYear},${currentDate}&orde
 const upcoming_games = `games?key=${apiKey}&dates=${currentDate},${nextYear}&ordering=-added&page_size=10`;
 const newgames = `games?key=${apiKey}&dates=${lastYear},${currentDate}&ordering=-released&page_size=10`;
 
-// https://api.rawg.io/api/games?key=035ad53dda1f4c6bad72c12bd2baaefc&dates=2023-02-21,2024-02-21&ordering=-rating&page_size=10
+// https://api.rawg.io/api/games?key=${apiKey}&dates=2023-02-21,2024-02-21&ordering=-rating&page_size=10
 
 export const popularGamesURL = () => `${base_url}${popular_games}`;
 export const upcomingGamesURL = () => `${base_url}${upcoming_games}`;
 export const newGamesURL = () => `${base_url}${newgames}`
 
 // GAME DETAILS
-export const gameDetailsURL = (game_id) => `${base_url}games/${game_id}?key=${apiKey}`
+export const gameDetailsURL = (game_id) => `${base_url}games/${game_id}?key=${apiKey}`;
 // Game ScreenShots
 export const gameScreenshotURL = (game_id) => `${base_url}games/${game_id}/screenshots?key=${apiKey}`;
-
+// Searched Game
+// https://api.rawg.io/api/games?key=${apiKey}&search=assassins%20creed&page_size=9
+export const searchGameURL = (game_name) => `${base_url}games?key=${apiKey}&search=${game_name}&page_size=9`;
