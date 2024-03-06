@@ -18,11 +18,6 @@ const detailReducer = (state = initialState, action) => {
                 ...state,
                 isLoading: true,
             }
-        case "CLEAR_SEARCHED":
-            return {
-                ...state,
-                searched: [],
-            }
         default:
             return { ...state }
     };

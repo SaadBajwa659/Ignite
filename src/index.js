@@ -3,17 +3,15 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 // REDUX SETUP
-import { configureStore, applyMiddleware, compose } from '@reduxjs/toolkit';
+import { configureStore} from '@reduxjs/toolkit';
 import rootReducer from './reducers';
 import { Provider } from 'react-redux';
 import {thunk} from 'redux-thunk';
 import { BrowserRouter } from "react-router-dom";
 
-const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
 const store = configureStore({
   reducer: rootReducer,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk), // Pass redux-thunk along with other default middleware
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
   devTools: process.env.NODE_ENV !== 'production',
 });
 
